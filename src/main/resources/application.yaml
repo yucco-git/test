@@ -1,0 +1,6 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/db_user?serverTimezone=UTC
+    username: admin
+    password: admin
+
