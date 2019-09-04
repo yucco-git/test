@@ -39,7 +39,7 @@ public class UserController {
     }
 
     // 検索
-    @RequestMapping(value = "/search", method = RequestMethod.GET)
+    @RequestMapping(value = "/search", method = RequestMethod.POST)
     public ModelAndView search(@RequestParam("keyword") String keyword) {
     //public String search(Model model, @RequestParam String keyword) {
         ModelAndView mv = new ModelAndView();
