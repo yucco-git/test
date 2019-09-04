@@ -15,7 +15,7 @@ public interface UserRepository {
     //全件取得
     public List<UserEntity> selectAll();
     //検索
-    @Query("select u from UserEntity u where u.dte like %:keyword% order by u.id asc")
-    public List<UserEntity> findUsers(@Param("keyword") String keyword);
+    //@Query("select u from UserEntity u where u.dte like %:keyword% order by u.id asc")
+    public List<UserEntity> selectUser(String keyword);
 
 }

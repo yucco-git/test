@@ -9,5 +9,5 @@ public interface UserService {
     //全件取得
     public List<UserEntity> getAllService();
     //検索
-
+    public List<UserEntity> findUsers(String keyword);
 }

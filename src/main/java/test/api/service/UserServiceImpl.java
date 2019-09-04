@@ -22,16 +22,12 @@ public class UserServiceImpl implements UserService {
         //LOGGER.debug("[[[ end getAllService() ]]] return = {}", users);
         return db_user;
     }
-    /*検索
+    //検索
     @Override
-    public List<UserEntity> findUsers() {
-        List<UserEntity> db_user = repository.getUser();
-        //return db_user;
+    public List<UserEntity> findUsers(String keyword) {
+        List<UserEntity> selected_user = repository.selectUser(keyword);
+        return selected_user;
     }
-
-     */
-
-
 
 
 }

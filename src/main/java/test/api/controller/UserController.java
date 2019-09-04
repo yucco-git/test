@@ -29,8 +29,6 @@ public class UserController {
     private UserRepository repository;
 
 
-    // スペースの関係でいろいろ省略?
-
     @RequestMapping(path = "/all")
     public String retrieveUserList(Model model) {
     //public List<UserEntity> retrieveUserList() {
@@ -43,19 +41,19 @@ public class UserController {
     }
 
     // 検索
-    @RequestMapping(value = "/user/search", method = RequestMethod.GET)
-    public ModelAndView search(@RequestParam String keyword) {
+    @RequestMapping(value = "/search", method = RequestMethod.GET)
+    public ModelAndView search(@RequestParam("keyword") String keyword) {
     //public String search(Model model, @RequestParam String keyword) {
         ModelAndView mv = new ModelAndView();
-        mv.setViewName("/user/index");
+        mv.setViewName("/User/index");
         if (StringUtils.isNotEmpty(keyword)) {
-            List<UserEntity> list = repository.findUsers(keyword);
+            List<UserEntity> list = service.findUsers(keyword);
             if (CollectionUtils.isEmpty(list)) {
                 //String message = msg.getMessage("user.list.empty", null, Locale.JAPAN);
                 String message = "non data";
                 mv.addObject("emptyMessage", message);
             }
-            mv.addObject("userList", list);
+            mv.addObject("list", list);
             //model.addAttribute("userList", list);
             //return "/index.html";
         }

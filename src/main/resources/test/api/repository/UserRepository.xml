@@ -6,8 +6,8 @@
         select * from user
     </select>
 
-    <select id="getUser" resultType="test.api.entity.UserEntity">
-        <!--修正する: select * from user; -->
+    <select id="selectUser" resultType="test.api.entity.UserEntity">
+        select * from user where dte like #{keyword} order by id asc
     </select>
 
 </mapper>
