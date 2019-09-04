@@ -31,11 +31,9 @@ public class UserController {
 
     @RequestMapping(path = "/all")
     public String retrieveUserList(Model model) {
-    //public List<UserEntity> retrieveUserList() {
         //LOGGER.debug("[[[ start retrieveUserList() ]]]");
         List<UserEntity> userList = service.getAllService();
         //LOGGER.debug("[[[ end retrieveUseList() ]]] return = {}", userList);
-        //return userList;
         model.addAttribute("userList", userList);
         return "/index.html";
     }
